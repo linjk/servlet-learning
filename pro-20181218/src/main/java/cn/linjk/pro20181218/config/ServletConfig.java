@@ -18,7 +18,10 @@ public class ServletConfig {
         servletRegistrationBean.setEnabled(true);
         servletRegistrationBean.addUrlMappings("/my-servlet");
         servletRegistrationBean.setName("MyServlet");
+        servletRegistrationBean.addInitParameter("user", "linjk");
 
         return servletRegistrationBean;
     }
+
+    // =============================================================================================
 }

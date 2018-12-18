@@ -21,6 +21,10 @@ public class MyServlet implements Servlet {
     @Override
     public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
         String servletName = servletConfig.getServletName();
+        String canCallUser = servletConfig.getInitParameter("user");
+        if (canCallUser.equals("linjk")) {
+            System.out.println("用户" + canCallUser + "可以调用该Servlet");
+        }
         res.setContentType("text/html");
         PrintWriter printWriter = res.getWriter();
         printWriter.print("<html><head></head>" + "<body>Hello from "+ servletName + "</body></html>");
@@ -28,7 +32,7 @@ public class MyServlet implements Servlet {
 
     @Override
     public String getServletInfo() {
-        return null;
+        return "MyServlet";
     }
 
     @Override
